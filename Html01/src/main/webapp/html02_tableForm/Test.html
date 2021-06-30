@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** User 정보 페이지 **</title>
+</head>
+<body>
+	<table width=600 height=400 border=5 cellpadding=5 cellspacing=5 align = "center" >
+		<form action="#" method="get">
+			<caption align="center">** User 정보 페이지 **</caption>
+			<tr>
+				<td align="center" bgcolor="CornflowerBlue " colspan="9" >
+				모든 항목을 입력&수정 하여 주십시오
+				</td>
+			</tr>
+			
+			<tr>
+				<td  align="center"  bgcolor="LightBlue ">아이디</td>
+				<td align="center"  bgcolor="LightSkyBlue"  colspan="8">
+				<input type="text" id="id" name="id" value="User ID" placeholder="아이디 입력란">
+				</td>
+			</tr>
+
+			<tr>
+			<td  align="center"  bgcolor="LightBlue " >비밀번호</td>
+				<td align="center"  bgcolor="LightSkyBlue" colspan="8">
+				<input type="text" id="pw" name="passwoed" value="User pw" placeholder="비밀번호">
+				</td>
+			</tr>
+			
+			<tr >
+				<td align="center"  bgcolor="LightBlue ">성별</td>
+				<td align="center"  bgcolor="LightSkyBlue" size=40%>
+				<input type="radio" id="M" name="gender" value="man" checked="checked"><label for="M">남자</label>
+				</td>&nbsp;&nbsp;
+				<td align="center"  bgcolor="LightSkyBlue" size=40%>
+				<input type="radio" id="F" name="gender" value="woman" checked="checked"><label for="F">여자</label>
+				</td>
+			</tr>
+			
+			<tr>
+			<td align="center"  bgcolor="LightBlue ">취미</td>
+				<td align="center"  bgcolor="LightSkyBlue" colspan="8">
+				 <select id="hobby" name="hobby"
+				multiple="multiple" size="5" >
+				<option value="1">공부
+				<option value="2">게임
+				<option value="3">야구
+				<option value="4">축구
+				<option value="5">여행
+				<option value="6">요리
+				<option value="7">유투브
+				<option value="8">독서
+			</select>
+				</td>
+			</tr>
+			
+			<tr>
+			<td  align = "center" bgcolor="LightBlue " >직업</td>  
+			<td  align = "center" bgcolor="LightBlue " colspan="8" >
+			<select id="job" name="job" multiple="multiple" size="5">
+			<option value="a">개발자
+			<option value="b">회사원
+			<option value="c">의사
+			<option value="d">학생
+			<option value="e">군인
+			</select>
+			</td>
+			</tr>
+			
+			<tr >
+				<td align="ceneter"  bgcolor="LightBlue ">자기소개</td>
+				<td align="ceneter"  bgcolor="LightSkyBlue" colspan="3">
+				<textarea row="50" cols="50" id="memo" name="memo" >입력란</textarea>
+				</td>
+			</tr>
+			
+			<tr>
+			<td   bgcolor="LightSkyBlue" align="center" colspan=2 >
+			<input type="submit" value="보내기" >
+			<td   bgcolor="LightSkyBlue" align="center" colspan=2>
+			<input type="reset" value="다시작성" >
+			</td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>

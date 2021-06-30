@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** HTML 5 : Group-fieldset/legend **</title>
+</head>
+<body>
+	<h2>** HTML 5 : Group-fieldset/legend **</h2>
+	<form action="#" method="get">
+		<fieldset>
+			<!-- 입력양식의 그룹지정 -->
+			<legend>** 필수 입력 사항 **</legend>
+			<!-- 입력양식의 이름지정 -->
+			ID:<input type="text" id="id" name="id" size="10" value="banana"
+				placeholder="영문으로만 입력 그러나 value가 우선 표시됨 "> <br>
+			Password:<input type="password" id="pw" name="pw" size="20"
+				maxlength="10" value="12345" placeholder="숫자로만 입력 하세요 ~~"> <br>
+		</fieldset>
+		<fieldset>
+			<legend>** 선택 사항 **</legend>
+			성별 : <input type="radio" name="gender" value="F" checked="checked">여성
+			&nbsp;&nbsp; <input type="radio" name="gender" value="M"
+				checked="checked">남성 <br> <br> &nbsp;&nbsp; **좋아하는
+			과일 모두 선택하기 ** <br> <input type="checkbox" name="cfruit"
+				value="1">Grape<br> <input type="checkbox"
+				name="cfruit" value="2">Apple<br> <input
+				type="checkbox" name="cfruit" value="3">Banana<br>
+			<hr>
+
+			** 취미 ** <br> <select id="hobby" name="hobby"
+				multiple="multiple" size="5">
+				<option value="1">공부
+				<option value="2">게임
+				<option value="3">야구
+				<option value="4">축구
+				<option value="5">여행
+				<option value="6">요리
+				<option value="7">유투브
+				<option value="8">독서
+			</select> <br> ** TextArea **<br>
+			<textarea rows="5" cols="50" id="memo" name="memo">** memo ** </textarea>
+			<br> ** Date ** <br> <input type="date" name="birthday"><br>
+		</fieldset>
+	</form>
+</body>
+</html>

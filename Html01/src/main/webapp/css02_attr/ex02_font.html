@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Font, Button, aTag **</title>
+<link rel="stylesheet" type="text/css" href="../css01/myStyle.css">
+<style>
+	.f1 {font-family:Arial; font-size:small; text-decoration:underline;}
+	.f2 {font-family:MyFont, Vladimir Script, 맑은 고딕, Wide Latin; font-size:x-large; text-decoration:overline;}
+			/* 없는 글꼴은 통과, 먼저 찾은 글꼴이 적용되고, 모두 없으면 브라우저 기본글꼴 적용됨 */
+	.f3 {font-family:Arial,fantasy; font-size:24pt; font-weight:bold;}
+	.f4 {font-style:italic; font-stretch:wider; text-decoration:line-through;}
+						/* font-stretch : 글자의 장평,  line-through : 취소선 */
+
+</style>
+
+
+</head>
+<body>
+<h2>** Font **</h2>
+<p class="f1">   Font Test 01 : f1    </p>
+<p class="f1 f2">Font Test 02 : f1, f2</p>
+<p class="f3">   Font Test 03 : f3    </p>
+<p class="f3 f4">Font Test 04 : f3, f4</p>
+
+<h2>** Button & Line Height **</h2>
+=> myStyle.css 에 작성<br>
+<div class="button f3">
+	<a href="http://www.naver.com">Naver</a>
+</div>
+
+
+
+</body>
+</html>

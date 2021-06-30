@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- 
+=> html5 문서임을 표시, 실행과는 무관
+=> 문서 형의 선언으로 html 문서 최 상단에 지정 
+=> html 버전에 따라 다르며 html5의 경우 위처럼 간결해짐 
+ -->
+<!-- html 문서의 시작/끝 : 최상위 태그 
+     lang : 검색엔진에 사용언어를 알려줌으로 검색 효율을 높혀준다. -->
+
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!--다양한 메타정보를 활용 , 검색엔진의 색인정보 활용 
+=> 홍보에 활용됨
+=> 한글폰트 지정, keywords & description 지정, 문서이동 설정    -->
+<meta name="Programmer" content="홍길동">
+
+<!-- http-equiv 속성은 지시문  
+<meta http-equiv="refresh" content="2;url=http://www.naver.com">
+-->
+
+<title>** Html Start **</title>
+<!-- 문서의 제목, 즐겨찾기에 적히는 => 홍보수단 -->
+</head>
+<body text="Lime " bgcolor="BlueViolet" background="/Html01/image/a1.png">
+<!-- ** 배경 이미지(경로지정방법)
+     => 상대경로 : 현재문서위치를 기준으로 "../image/aaa.gif"
+     => 절대경로 : 현재프로젝트기준 "/Html01/image/bbb.gif" -->
+hello !! &nbsp;&nbsp;&nbsp;&nbsp; HTML <br>
+ 무야호~~ <br>
+1) Text -> H <br>
+<h1>큰글자 와 줄바꿈</h1>
+<h2>큰글자 와 줄바꿈</h2>
+<h3>큰글자 와 줄바꿈</h3>
+<h4>큰글자 와 줄바꿈</h4>
+<h5>큰글자 와 줄바꿈</h5>
+<h6>큰글자 와 줄바꿈</h6>
+<!-- 수평선 -->
+<hr size="5" color="hotpink" width="300" align="left">
+2) Text -> Font <br>
+<!-- size = 1~7 face="글꼴명" color="red"
+     기본크기 : 3, <basefont size=??> <\basefont> -> win9 부터적용안됨 
+-->
+
+<font size="7" face="바탕체">폰트 사이즈를 7로~</font><br>
+<font size="6">폰트 사이즈를 6으로 </font><br>
+<FONT SIZE="+1" face=궁서체 color=blue>기본 글자 크기에 +1로</FONT>
+
+<hr>
+<pre>
+** 톰캣서버 사용시 수정사항이 반영되지않는 경우
+=> 강한 새로고침 : Ctrl + shift + r 
+=> 그렇다면 크롬의 인터넷 기록 삭제 를 한다.
+  ( Ctrl + shift + del 누른 후 인터넷 기록 삭제-> cash 문제인 경우)
+=> 크롬의 옵션을 변경 (개발자모드 : settings - network - Disable Cash) 
+=> 서버 : stop, clean 후 실행
+=> 그래도 안되면 다른 브라우져로 테스트 해본다.
+  (대부분 반영됨)
+</pre>
+
+</body>
+</html>

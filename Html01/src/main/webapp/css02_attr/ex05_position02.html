@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Position02 : OverFlow, Z-Index **</title>
+<style>
+	.pbox {	width:400px; height:200px;
+			border:3px solid black;
+			left:30px; top:30px; 
+			position: relative;
+			overflow: scroll; 
+			/*  hidden / auto:필요한곳에만 자동으로 scroll 표시 */
+			}
+	.box { 	width:100px; height:100px;
+			position:absolute; }
+			  /* absolute / fixed / relative */
+	.box:nth-child(1) {
+			left:10px; top:10px; background-color:red;
+			z-index:300; }	
+	.box:nth-child(2) {
+			left:50px; top:70px; background-color:green;
+			z-index:200; }	
+	.box:nth-child(3) {
+			left:90px; top:130px; background-color:blue;
+			z-index:100; }							  
+</style>
+
+</head>
+<body>
+<h2>** Position Test **</h2>
+<div class="pbox">
+	<div class="box">1111</div>
+	<div class="box">2222</div>
+	<div class="box">3333</div>
+</div>
+<h3><pre>
+** Position과 연관되는 속성 **
+=> overflow
+=> z-index
+
+** Position 에 따른 문제점
+=> absolute 사용시 다른요소에 무관하게 무조건 위치하므로 다른 태그들이 가려짐
+	-> z-index (값이 클수록 우선순위를 가짐)
+=> 상위 요소를 벗어나는 부분에 해결
+	-> overflow
+</pre></h3>
+
+</body>
+</html>

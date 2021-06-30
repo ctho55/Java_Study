@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Position01 : 절대위치 상대위치 **</title>
+<!-- position. 기본 도형 3개를 이용하여 
+		position01 -> positioning, position,
+		position01 -> overflow, z-index Test   -->
+<style>
+	.pbox {left:30px; top:30px; position: relative;}
+	.box { 	width:100px; height:100px;
+			position:absolute; }
+			  /* absolute / fixed / relative */
+	.box:nth-child(1) {
+			left:10px; top:10px; background-color:red;}	
+	.box:nth-child(2) {
+			left:50px; top:50px; background-color:green;}	
+	.box:nth-child(3) {
+			left:90px; top:90px; background-color:blue;}							  
+</style>
+
+</head>
+<body>
+<h2>** Position Test **</h2>
+<div class="pbox">
+	<div class="box">1111</div>
+	<div class="box">2222</div>
+	<div class="box">3333</div>
+</div>
+<h3><pre>
+** Positioning(위치) 속성 **
+=> left, top, right, bottom
+
+** Position
+=> 요소의 위치를 상대적으로 나타나게 할 것인지,
+   또는 항상 같은 위치에 나타나게 할 것인지 설정.
+=> 절대좌표 : 값에 의한 절대 위치 (항상 같은 위치) 
+	- absolute : 다른요소에 무관하게 지정된 절대위치 단, 부모위치 기준
+	- fixed : 항상 Body를 기준으로 함 (부모위치 와 무관)
+=> 상대좌표 : 	요소를 입력순서에 따른 상대 위치 지정 
+	- relative : 이전 요소 위치에서 이동 
+	- static : 상대 위치 좌표
+</pre></h3>
+
+</body>
+</html>

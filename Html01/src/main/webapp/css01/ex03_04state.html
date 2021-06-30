@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** 상태(State, 속성) 와 동작(Action, 반응) 에 의한 선택 **</title>
+<style>
+	/* Test1) 상태(State, 속성) */
+	input:enabled { background-color: yellow; }
+	input:disabled { background-color: gray; }
+	input:focus { background-color: red; }
+	
+	/* Test2) 동작(Action, 반응) */
+	h3:hover  { font-size: 20pt;  color: blue; }
+	h3:active { font-size: 30pt;  color: aqua; }
+	
+</style>
+
+</head>
+<body>
+<h2>** Test1) 상태(State, 속성) 에 의한 선택 **</h2>
+	<h3>사용가능 : enabled</h3>
+	<input />
+	<h3>사용불가능 : disabled</h3>
+	<input disabled="disabled"/>
+	
+<h2>** Test2) 동작(Action, 반응) 에 의한 선택 **</h2>
+	<h3>Mouse Hover : MouseOn</h3>
+	<h3>Mouse Active : 마우스 누르고 있는동안</h3>
+</body>
+</html>

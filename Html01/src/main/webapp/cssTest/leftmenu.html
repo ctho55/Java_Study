@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** 목록표시 Tag 와 Link **</title>
+<style>
+	ul { list-style: none; }
+	ul ul { display: none;}
+	ul li:hover ul {display: block;}
+	ul li a:hover {color: green;}
+	ul a {
+		display: block;
+		line-height: 30px;
+		text-decoration: none;
+		font-size: 20px; font-weight: bold; color: gray;
+	}
+ #login {
+ 	width: 130px; 
+ 	background-color: DeepSkyBlue ;
+ 	font-weight: 10;
+ 	font-size: 20px;
+ 	border-radius: 20px;
+ 	border:1px solid black; 
+ }     
+</style>
+
+</head> 
+<body>
+<br>
+<form action="#" method="get"> 
+<fieldset>
+<legend> Login</legend>
+<div>  
+id&nbsp;<input type="text" id='id' name='id' size=10 > <br>
+pw<input type= "password" id='pw' name='id' size=10 maxlength=10; placeholder="  10자리 비밀번호를 입력하여주십시오"
+ >
+</div>
+<br>
+<input type="submit" id="login" value="로그인"> 
+</fieldset>
+</form> 
+
+<br> 
+<ul>
+	<li><a>GoodSite</a>
+	<ul>  
+		<li><a href="https://oracle.com" target="_blank">Oracle</a>
+		<li><a href="http://docs.oracle.com/javase/8/docs/api" target="main">JavaAPI</a>
+		<li><a href="http://www.eclipse.org"  target="_blank">Eclips</a>
+		<li><a href="http://tomcat.apache.org"  target="_blank">Tomcat</a>
+	</ul>
+	
+	<li><a>HTML</a>
+	<ul>
+		<li><a href="../html01/ex01_start.html" target="main">Start</a>
+		<li><a href="../html01/ex02_SpecialChar.html" target="main">Special</a>
+		<li><a href="../image/dream.jpg" target="main">Image</a>
+	</ul>
+	
+	<li><a>My menu</a> 
+	<ul>
+		<li><a href="./meaure.html" target="main">measure</a>
+		<li><a href="./SleepExplanation.html" target="main">Sleep_Explanation</a>
+		<li><a href="./item.html" target="main">item</a>
+	</ul>
+	<br>
+	<li><a href="./main.html" target="main">HOME</a>
+</ul>
+</body>
+
+</html>

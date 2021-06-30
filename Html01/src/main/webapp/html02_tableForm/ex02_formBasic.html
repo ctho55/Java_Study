@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Form Basic **</title>
+</head>
+<body>
+	<pre>
+	<h2>** Form 기본 Tag **</h2>
+	=> form Tag는 서버로 정보를 전송하는데 필요한 속성을 가지고 있음 <br>
+ 	 action="목적지_요청명" method="(get/post)(전송방식)"
+	=> id,name 모두 유일성, id는 문서내부에서 사용, name 은 문서외 (특히 서버) 에서 사용 
+
+</pre>
+
+	<form action="#" method="get">
+		ID:<input type="text" id="id" name="id" size="10" value="banana"
+			placeholder="영문으로만 입력 그러나 value가 우선 표시됨 "> <br>
+		Password:<input type="password" id="pw" name="pw" size="20"
+			maxlength="10" value="12345" placeholder="숫자로만 입력 하세요 ~~"> <br>
+		<hr>
+		** Radio Button <br> => 그룹중에서 하나만 선택 가능, name 이 그룹명 <br> **
+		Menu ** <br> <input type="radio" name="menu" value="짜장면"
+			checked="checked">짜장면 <input type="radio" name="menu"
+			value="짬뽕 ">짬뽕 <input type="radio" name="menu" value="탕수육">탕수육
+		<p></p>
+
+		** Fruits ** <br> <input type="radio" name="fruit" value="1">Grape<br>
+		<input type="radio" name="fruit" value="2" checked="checked">Apple<br>
+		<input type="radio" name="fruit" value="3">Banana<br>
+		<hr>
+		**Check Box ** <br> => 다중선택 가능 ,name 이 그룹명 <br> ** 먹고싶은거 모두
+		선택하기 <br> <input type="checkbox" name="cmenu" value="1">짜장면
+		<input type="checkbox" name="cmenu" value="짬뽕 ">짬뽕 <input
+			type="checkbox" name="cmenu" value="탕수육">탕수육
+		<hr>
+
+		** 좋아하는 과일 모두 선택하기 ** <br> <input type="checkbox" name="cfruit"
+			value="1">Grape<br> <input type="checkbox" name="cfruit"
+			value="2">Apple<br> <input type="checkbox"
+			name="cfruit" value="3">Banana<br>
+		<hr>
+
+		** Select : 단일선택 ** <br> <select id="level" name="level">
+			<option value="A">관리자
+			<option value="B">나무
+			<option value="C">잎새
+			<option value="D">나무
+		</select> <br> <br>
+		<hr>
+
+		** Select : 다중선택 ** <br> <select id="hobby" name="hobby"
+			multiple="multiple" size="5">
+			<option value="1">공부
+			<option value="2">게임
+			<option value="3">야구
+			<option value="4">축구
+			<option value="5">여행
+			<option value="6">요리
+			<option value="7">유투브
+			<option value="8">독서
+		</select>
+		<hr>
+		<br> ** TextArea **<br>
+		<textarea rows="5" cols="50" id="memo" name="memo">** memo ** </textarea>
+		<br> ** Date ** <br> <input type="date" name="birthday"><br>
+		<hr>
+		** 동작 (전송) ** <br> <input type="button" value="버튼[동작을 구현]">
+		&nbsp;&nbsp; <input type="submit" value="보내기[서버로 전송]">
+		&nbsp;&nbsp; <input type="reset" value="취소[입력값 clear]">
+		&nbsp;&nbsp;
+
+	</form>
+
+</body>
+</html>
