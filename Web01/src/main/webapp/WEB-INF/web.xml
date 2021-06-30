@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Web01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+    
+  <!-- url 매핑 -->  
+  <servlet>
+  	<servlet-name>mysevlet</servlet-name>
+  	<servlet-class>servlet01.Ex02_GuGu</servlet-class>
+  </servlet>
+  <servlet-mapping> 
+   	<servlet-name>mysevlet</servlet-name>
+  	<url-pattern>/gugu</url-pattern>
+  	<url-pattern>/99</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Session Time 설정 
+  		= 분 단위 이며 0 또는 음수를 지정하면 무한시간 -->
+  <session-config>
+  	<session-timeout>1</session-timeout>
+  </session-config>
+  
+  <!-- 초기화 파라미터 설정  -->
+  <context-param>
+  	<description>관리자 로그인 확인</description>
+  	<param-name>isLogin</param-name>
+ 	<param-value>true</param-value>
+  </context-param>
+  <context-param>
+  	<description>관리자 ID</description>
+  	<param-name>adminID</param-name>
+ 	<param-value>green</param-value>
+  </context-param><context-param>
+  	<description>Password</description>
+  	<param-name>adminPW</param-name>
+ 	<param-value>12345</param-value>
+  </context-param>
+  
+  
+</web-app>   
