@@ -12,7 +12,7 @@
 <br>
 <table><form action="/Web02/login" method="get">
 	<tr><td bgcolor="PaleTurquoise ">I D</td>
-		<td><input type="text" name="id" value="banana"></td>
+		<td><input type="text" name="id" ></td>
 	</tr>
 	<tr><td bgcolor="PaleTurquoise ">Password</td>
 		<td><input type="password" name="password" value="12345"></td>
