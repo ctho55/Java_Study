@@ -25,8 +25,17 @@ public class C03_mList extends HttpServlet {
 		// ** 1. 준비
 		MemberService service = new MemberService();
 		List<MemberVO> list = new ArrayList<>();
-		String uri = "/member/memberList.jsp";
+		String uri = "";
 		String message = null;
+		
+		//관리자 List 추가 
+		String loginID=(String)request.getSession().getAttribute("loginID");
+		
+		if("admin".equals(loginID)) uri="/member/memberList2.jsp";
+		else {
+			uri = "/member/memberList.jsp";
+		}
+		
 		// ** 2. Service
 		list = service.selectList();
 		if (list!=null) {

@@ -21,7 +21,9 @@ public class MemberDAO {
 
 	// ** selectList
 	public List<MemberVO> selectList() {
-		sql = "select * from member order by id" ;
+		// id =admin 은 제외하기
+		// mysql : != 또는 <>
+		sql = "select * from member where id <> 'admin' order by id" ;
 		List<MemberVO> list = new ArrayList<>();
 		try {
 			st=cn.createStatement();

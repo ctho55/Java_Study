@@ -43,5 +43,26 @@
  	<param-value>12345</param-value>
   </context-param>
   
+  <!-- Exxception Test : 응답 상태 코드 별 Test -->
+<error-page>
+<error-code>404</error-code>
+<location>/jsp07_exception/ex02_404Page.jsp</location>
+</error-page>
+<error-page>
+<error-code>500</error-code>
+<location>/jsp07_exception/ex02_500Page.jsp</location>
+</error-page>
+  
+   <!-- Exxception Test2 : Exception Type 별 Test -->
+  <error-page>
+  <exception-type>java.lang.NullPointerException</exception-type>
+  <location>/jsp07_exception/ex03_Null.jsp</location>
+  </error-page>
+  
+  <error-page>
+  <exception-type>java.lang.ArithmeticException</exception-type>
+  <location>/jsp07_exception/ex03_Arith.jsp</location>
+  </error-page>
+  
   
 </web-app>   

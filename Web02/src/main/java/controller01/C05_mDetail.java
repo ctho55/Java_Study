@@ -35,17 +35,30 @@ public class C05_mDetail extends HttpServlet {
 		
 		HttpSession session = request.getSession(false);
 		if(session != null && session.getAttribute("loginID") !=null) {
+			
 			// 내정보 가져오기 
+			// 관리자 기능 추가 
+			// loginID가 admin 이면 request.getparameter("id")로 검색
+			String loginID =(String)session.getAttribute("loginID");
+			System.out.println(loginID);
+			if ("admin".equals(loginID)) {
+				vo.setId(request.getParameter("id"));
+			}else {
+				vo.setId("loginID");
+			}
+			//vo.setId((String)session.getAttribute("loginID"));
 			// Service, memberDetail.jsp
 			// 2.Service
-			vo.setId((String)session.getAttribute("loginID"));
 			vo=service.selectOne(vo);
+			
+			
 			if (vo !=null) {
 				request.setAttribute("Apple", vo);
 				//if(request.getParameter("jcode").equals("U")) 
 				// NullpointerException 발생가능성 매우 높음 
 				// => 예방차원에서 아래처럼 비교 
 				if("U".equals(request.getParameter("jcode"))) {
+					
 					uri="/member/updateForm.jsp";
 				}else uri="/member/memberDetail.jsp";
 			}else {
