@@ -44,7 +44,7 @@ public class C05_mDetail extends HttpServlet {
 			if ("admin".equals(loginID)) {
 				vo.setId(request.getParameter("id"));
 			}else {
-				vo.setId("loginID");
+				vo.setId(loginID);
 			}
 			//vo.setId((String)session.getAttribute("loginID"));
 			// Service, memberDetail.jsp

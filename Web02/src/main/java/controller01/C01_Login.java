@@ -24,7 +24,7 @@ public class C01_Login extends HttpServlet {
 		MemberService service = new MemberService();
 		MemberVO vo = new MemberVO();
 		String uri = "/member/loginForm.jsp";
-		String message = "";
+		String message = null;
 		// 1. Parameter 처리
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
