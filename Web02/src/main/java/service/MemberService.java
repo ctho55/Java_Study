@@ -12,24 +12,17 @@ public class MemberService {
 	public List<MemberVO> selectList() {
 		return dao.selectList();
 	} //selectList()
-	
 	public MemberVO selectOne(MemberVO vo) {
 		return dao.selectOne(vo);
 	} //selectOne
-
+	
 	public int insert(MemberVO vo) {
 		return dao.insert(vo);
-	}//insert
-	
+	} //insert
 	public int update(MemberVO vo) {
 		return dao.update(vo);
-	}//update
-	
+	} //update
 	public int delete(MemberVO vo) {
 		return dao.delete(vo);
-	}//delete
-	
-	
-	
-	
+	} //delete
 } //class

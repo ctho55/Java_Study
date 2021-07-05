@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 // ** MySql Connection
-
 public class DBConnection {
 	
 	public static Connection getConnection() {

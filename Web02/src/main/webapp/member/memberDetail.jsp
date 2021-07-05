@@ -42,7 +42,7 @@
 
 <hr>
 
-<a href="/Web02/mdetail?jcode=U">내정보수정</a>&nbsp;&nbsp; 
+<a href="/Web02/mdetail?id=${Apple.id}&jcode=U">내정보수정</a>&nbsp;&nbsp; 
 <!-- ** 내정보수정
 		=> 내정보 표시하는 폼이 출력(mdetail) -> 수정후, 수정버튼 -> 수정 서블릿 -->
 

@@ -9,7 +9,7 @@ public class MemberVO {
 	private String lev;
 	private String birthd;
 	private int point;
-	private float weight;
+	private double weight;
 	
 	public String getId() {
 		return id;
@@ -47,10 +47,10 @@ public class MemberVO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	public float getWeight() {
+	public double getWeight() {
 		return weight;
 	}
-	public void setWeight(float weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 	@Override

@@ -21,8 +21,8 @@ public class MemberDAO {
 
 	// ** selectList
 	public List<MemberVO> selectList() {
-		// id =admin 은 제외하기
-		// mysql : != 또는 <>
+		// id = admin 은 제외 하기
+		// MySql : != 또는 <> 
 		sql = "select * from member where id <> 'admin' order by id" ;
 		List<MemberVO> list = new ArrayList<>();
 		try {
@@ -39,7 +39,7 @@ public class MemberDAO {
 					vo.setLev(rs.getString(4));
 					vo.setBirthd(rs.getString(5));
 					vo.setPoint(rs.getInt(6));
-					vo.setWeight(rs.getFloat(7));
+					vo.setWeight(rs.getDouble(7));
 					list.add(vo);
 				}while(rs.next());
 			}else {
@@ -68,7 +68,7 @@ public class MemberDAO {
 				vo.setLev(rs.getString(4));
 				vo.setBirthd(rs.getString(5));
 				vo.setPoint(rs.getInt(6));
-				vo.setWeight(rs.getFloat(7));
+				vo.setWeight(rs.getDouble(7));
 			}else {
 				System.out.println("** 해당하는 자료가 없습니다 ~~ **");
 				vo=null;
@@ -85,57 +85,53 @@ public class MemberDAO {
 		sql="insert into member values(?,?,?,?,?,?,?)";
 		try {
 			pst=cn.prepareStatement(sql);
-			pst.setString(1,vo.getId() );
+			pst.setString(1,vo.getId());
 			pst.setString(2,vo.getPassword());
-			pst.setString(3,vo.getName() );
-			pst.setString(4,vo.getLev() );
-			pst.setString(5,vo.getBirthd() );
+			pst.setString(3,vo.getName());
+			pst.setString(4,vo.getLev());
+			pst.setString(5,vo.getBirthd());
 			pst.setInt(6,vo.getPoint());
-			pst.setFloat(7,vo.getWeight());
-			
+			pst.setDouble(7,vo.getWeight());
 			return pst.executeUpdate();
-
+			// 처리된 row 의 갯수 return
 		} catch (Exception e) {
-			System.out.println("** insert Exception =>"+e.toString() );
+			System.out.println("** insert Exception => "+e.toString());
 			return 0;
 		}
-	}//insert
+	} //insert
 	
 	// ** update
-	// pkey는 일반적으로 수정 불가 
+	// => pkey 일반적으로 수정하지 않음.
 	public int update(MemberVO vo) {
-		sql="update member set password = ?, name = ?, lev = ?"
-				+ ", birthd = ?, point= ?, weight = ? where id = ?";
+		sql="update member set password=?, name=?, lev=?"
+				+ ", birthd=?, point=?, weight=? where id=?";
 		try {
 			pst=cn.prepareStatement(sql);
-			pst.setString(1, vo.getPassword());
-			pst.setString(2,vo.getName() );
-			pst.setString(3,vo.getLev() );
-			pst.setString(4,vo.getBirthd() );
+			pst.setString(1,vo.getPassword());
+			pst.setString(2,vo.getName());
+			pst.setString(3,vo.getLev());
+			pst.setString(4,vo.getBirthd());
 			pst.setInt(5,vo.getPoint());
-			pst.setFloat(6,vo.getWeight());
-			pst.setString(7, vo.getId());
+			pst.setDouble(6,vo.getWeight());
+			pst.setString(7,vo.getId());
 			return pst.executeUpdate();
+			// 처리된 row 의 갯수 return
 		} catch (Exception e) {
-			System.out.println("** update Exception =>"+e.toString() );
+			System.out.println("** update Exception => "+e.toString());
 			return 0;
 		}
-	}//update
+	} //update
 	
 	// ** delete
 	public int delete(MemberVO vo) {
-		sql="delete from member where id=?";
+		sql="delete from member where id=?" ;
 		try {
 			pst=cn.prepareStatement(sql);
 			pst.setString(1, vo.getId());
 			return pst.executeUpdate();
 		} catch (Exception e) {
-			System.out.println("** delete Exception =>"+e.toString() );
+			System.out.println("** delete Exception => "+e.toString());
 			return 0;
 		}
-		
 	} //delete
-	
-	
-	
 } //class
