@@ -31,7 +31,6 @@ public class C02_BDetail extends HttpServlet {
 		// => 조회수 증가 
 		//    글쓴이(Parameter 로 전달) 와 글보는이(loginID) 가 달라야 함.
 		//    DAO, Service 에 countUp 메서드 추가
-		vo.setSeq(Integer.parseInt(request.getParameter("seq")));
 		
 		HttpSession session = request.getSession(false);
 		if (session != null && session.getAttribute("loginID") != null) {
@@ -39,17 +38,22 @@ public class C02_BDetail extends HttpServlet {
 			// 글쓴이(Parameter 로 전달) 와 글보는이(loginID) 가 다른경우에만 조회수 증가
 			System.out.println("loginID=> "+loginID);
 			System.out.println("request.getParameter(id)=> "+request.getParameter("id"));
+			
+			vo.setSeq(Integer.parseInt(request.getParameter("seq")));
+			
 			if (!loginID.equals(request.getParameter("id"))) {
 				service.countUp(vo) ;
 			} 
 			// 글내용 조회
+			
 			vo = service.selectOne(vo);
+			
 			if (vo == null) {
 				message = "~~ 글번호에 해당하는 글을 찾을 수 없습니다 ~~" ;
 				uri = "/blist" ;
 			}else request.setAttribute("Apple", vo);
 			
-		}else {
+		}else{
 			message = "~~ 로그인 정보가 없습니다 !! 로그인 후 다시 하세요  ~~" ;
 			uri = "/member/loginForm.jsp" ;
 		}
