@@ -46,7 +46,10 @@
 <!-- ** 내정보수정
 		=> 내정보 표시하는 폼이 출력(mdetail) -> 수정후, 수정버튼 -> 수정 서블릿 -->
 
-<a href="/Web02/mdelete.jsp">회원탈퇴</a>
+<a href="/Web02/mdelete?id=${Apple.id}">회원탈퇴</a>
+	<!-- 관리자가 삭제하는 경우 id가 필요함 --> 
+
+<hr>
 <a href="/Web02/index.jsp">HOME</a>
 
 

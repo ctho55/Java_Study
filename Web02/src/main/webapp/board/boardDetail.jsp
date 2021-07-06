@@ -35,7 +35,7 @@
  	** 글쓴이(Apple.id) 와 글보는이(loginID) 가 동일인 인지 .. 
  	=> 표시 되는 메뉴가 달라져야 함 -->
 <c:if test="${loginID!=null}"> 	
-  <c:if test="${loginID==Apple.id}">
+  <c:if test="${loginID==Apple.id || loginID == 'admin'}">
 	<a href="/Web02/bdetail?seq=${Apple.seq}&jcode=U">글수정</a>&nbsp;
 	<a href="/Web02/bdelete?seq=${Apple.seq}">글삭제</a>&nbsp;
   </c:if>
