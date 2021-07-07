@@ -5,19 +5,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** Web MVC2 Board Insert **</title>
+<title>** Web MVC2 Board update **</title>
 <link rel="stylesheet" type="text/css" href="./myLib/myStyle.css">
 </head>
 <body>
-<h2>** Web MVC2 Board Insert **</h2>
-<table><form action="/Web02/binsert" method="get">
+<h2>** Web MVC2 Board update**</h2>
+<table><form action="/Web02/bupdate" method="get">
+	
+	<tr height="40"><td bgcolor="Silver">Seq</td>
+		<td><input type="text" name="seq" value="${Apple.seq}" readonly></td>
+		</tr>
+	
 	<tr height="40"><td bgcolor="Silver">Id</td>
-		<td><input type="text" name="id" value="${loginID}" readonly></td></tr>
+		<td><input type="text" name="id" value="${Apple.id}" readonly></td>
+		</tr>
 	<tr height="40"><td bgcolor="Silver">Title</td>
-		<td><input type="text" name="title"></td></tr>	
+		<td><input type="text" name="utitle" value="${Apple.title}"></td>
+		</tr>	
 	<tr height="40"><td bgcolor="Silver" >Content</td>
-		<td><textarea name="content" rows="10" cols="40"></textarea></td>
+		<td><textarea name="ucontent" rows="10" cols="40"></textarea></td>
 	</tr>
+	
 	<tr height="40"><td></td>
 		<td><input type="submit" value="전송">&nbsp;&nbsp;
 			<input type="reset" value="취소">
@@ -29,7 +37,7 @@
 <hr>
 => ${message}
 </c:if>
-<br><hr> 
+<br><hr>
 <a href="/Web02/blist">bList</a>&nbsp;
 <a href="/Web02/index.jsp">HOME</a>
 </body>

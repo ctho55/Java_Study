@@ -1,7 +1,6 @@
 package controller02;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,6 +43,7 @@ public class C03_BInsert extends HttpServlet {
 		// 3. View
 		if (message !=null) request.setAttribute("message", message);
 		//request.getRequestDispatcher(uri).forward(request, response);
+		//=> 웹브라우져의 주소창이 안바뀌고 binsert 로 남아있기 때문에 새로고침하면 재입력됨
 		response.sendRedirect(uri);
 	} //doGet
 

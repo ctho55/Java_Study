@@ -15,45 +15,60 @@ import vo.MemberVO;
 @WebServlet("/mdelete")
 public class C07_Delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public C07_Delete() {
-        super();
-    }
+
+	public C07_Delete() {
+		super();
+	}
+
 // ** Member Delete : 회원탈퇴
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// 1. 준비
 		MemberService service = new MemberService();
 		MemberVO vo = new MemberVO();
 		String uri = "";
 		String message = null;
-		
+
 		// => 삭제 대상 -> vo 에 set
 		HttpSession session = request.getSession(false);
-		
-		if (session!=null && session.getAttribute("loginID")!=null) {
+		String loginId = (String) session.getAttribute("loginID");
+
+		if (session != null && loginId != null) {
 			// 삭제 가능 => message, index.jsp
-			vo.setId((String)session.getAttribute("loginID"));
+			// 관리자 기능 추가
+			// => 삭제대상 확인, session 삭제 여부 
+			// => session 삭제 여부
+			//
+			if (request.getParameter("id") != null) {
+				vo.setId(request.getParameter("id"));
+			} else {
+				vo.setId(loginId);
+			}
 			// 2. Service
 			if (service.delete(vo) > 0) {
-					// 삭제성공
-				message="~~ 회원탈퇴 성공 !!  1개월후 재가입 가능 합니다 ~~";
-				session.invalidate();
-			}else { // 삭제실패
-				message="~~ 회원탈퇴 오류 !!  다시 하세요 ~~";
+				// 삭제성공
+				message = "~~ 회원탈퇴 성공 !!  1개월후 재가입 가능 합니다 ~~";
+
+				if (!"admin".equals(loginId)) {
+					session.invalidate(); // admin이 아닌경우에만 삭제
+				}
+			} else { // 삭제실패
+				message = "~~ 회원탈퇴 오류 !!  다시 하세요 ~~";
 			}
-			uri="/index.jsp";	
-		}else {
-			// 삭제불가능 => message, loginForm.jsp 
-			message="~~ 로그인 정보가 없습니다!! 로그인후 하세요 ~~";
-			uri="/member/loginForm.jsp";	
+			uri = "/index.jsp";
+		} else {
+			// 삭제불가능 => message, loginForm.jsp
+			message = "~~ 로그인 정보가 없습니다!! 로그인후 하세요 ~~";
+			uri = "/member/loginForm.jsp";
 		}
-		
+
 		// 3. View => forward
-		request.setAttribute("message",message);
+		request.setAttribute("message", message);
 		request.getRequestDispatcher(uri).forward(request, response);
-	} //doGet
- 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	} // doGet
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
-} //class
+} // class

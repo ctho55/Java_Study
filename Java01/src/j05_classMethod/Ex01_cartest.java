@@ -1,5 +1,7 @@
 package j05_classMethod;
 
+import j06_classExtends.Ex01_Car;
+
 public class Ex01_cartest {
 	public static void main(String[] args) {
 		//1.객체일생 : 객체사용  생성 --> 사용 -->소멸
