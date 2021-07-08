@@ -1,10 +1,15 @@
 package fileIO_test;
 
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.List;
 
 // ** 과제
@@ -49,7 +54,10 @@ public class MemberMain {
 				if (vo != null) System.out.println(vo);
 				else break;
 			}
-		} catch (Exception e) {
+		}catch (EOFException e) {
+			System.out.println("readObject 종료  => "+e.toString());
+			System.out.println("자료 출력 완료 ");
+		}catch (Exception e) {
 			System.out.println("main Exception => "+e.toString());
 		} finally {
 			// ** 스트림 소멸
@@ -58,6 +66,11 @@ public class MemberMain {
 		}
 		
 		// 2.2) 문자 스트림으로 처리
+		// => Membermain2.java 에서 처리 
+		
+		
+		
+		
 		
 		
 		System.out.println("** Member Test 종료 **");

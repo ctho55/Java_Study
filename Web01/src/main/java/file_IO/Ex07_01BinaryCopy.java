@@ -17,6 +17,7 @@ public class Ex07_01BinaryCopy {
 		try {
 			while((c = fi.read()) != -1) {
 				fo.write((byte)c);
+				//byte 스트림이므로 int 에서 1byte 만 전달되므로 타입변환을 했음. (안해도 무관)
 			}
 			System.out.println(src.getPath()+ "를 " + dest.getPath()+ "로 복사하였습니다.");
 		} finally {
