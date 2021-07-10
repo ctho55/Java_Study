@@ -9,4 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- FrontController Url Mapping -->
+  <servlet>
+  	<servlet-name>myServlet</servlet-name>
+  	<!-- <servlet-class>controllerF.Ex01_FrontBasic</servlet-class> -->
+  	<servlet-class>controllerF.Ex02_FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>myServlet</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

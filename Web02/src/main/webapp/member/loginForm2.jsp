@@ -5,17 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>*** Web_MVC2 LoginForm Test**</title>
+<title>*** Web_MVC2 LoginForm **</title>
 </head>
 <body>
-<h2>로그인 폼</h2>
+<h2>*** Web_MVC2 LoginForm_UserVO Test **</h2>
 <br>
-
-<table><form action="/Web02/login2" method="get">
-	<tr><td bgcolor="PaleTurquoise ">I D</td>
-		<td><input type="text" name="id" ></td>
+<table><form action="/Web02/logintest" method="get">
+	<tr><td bgcolor="pink">I D</td>
+		<td><input type="text" name="id"></td>
 	</tr>
-	<tr><td bgcolor="PaleTurquoise ">Password</td>
+	<tr><td bgcolor="pink">Password</td>
 		<td><input type="password" name="password" value="12345"></td>
 	</tr>
 	<tr height="50"><td></td>
@@ -24,15 +23,6 @@
 		</td>
 	</tr>
 </form></table>
-
-<c:if test="${userid != null }">
-<a href="/Web02/logout">로그아웃</a>
-</c:if>
-
-
-
-
-
 <c:if test="${message != null}">
 	<br>${message}<br><br>	
 </c:if>

@@ -29,7 +29,7 @@
 <hr>
 => ${message}
 </c:if>
-<br><hr> 
+<br><hr>
 <a href="/Web02/blist">bList</a>&nbsp;
 <a href="/Web02/index.jsp">HOME</a>
 </body>

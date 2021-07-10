@@ -60,6 +60,7 @@ public class C01_Login2 extends HttpServlet {
 			}else {
 				message = "~~ password 오류 !!! 다시 하세요 ~~" ;
 			}
+		}else {
 			message = "~~ id 오류 !!! 다시 하세요 ~~" ;
 		}
 

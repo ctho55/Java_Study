@@ -41,8 +41,8 @@ public class MemberMain {
 		// 2.1) byte 스트림의 객체직렬화
 		// => Java Code 로는 확인가능하지만 메모장으로는 확인불가
 		// => 문자스트림으로 처리해야 함
-		ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("memberObj.txt"));
-		ObjectInputStream in = new ObjectInputStream(new FileInputStream("memberObj.txt"));
+		ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("memberTest.txt"));
+		ObjectInputStream in = new ObjectInputStream(new FileInputStream("memberTest.txt"));
 		try {
 			// * 객체 직렬화 -> to 화일
 			for (MemberVO vo:list) {
@@ -67,12 +67,6 @@ public class MemberMain {
 		
 		// 2.2) 문자 스트림으로 처리
 		// => Membermain2.java 에서 처리 
-		
-		
-		
-		
-		
-		
 		System.out.println("** Member Test 종료 **");
 	} //main
 } //class

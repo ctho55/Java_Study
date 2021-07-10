@@ -22,9 +22,10 @@
 <c:forEach var="list" items="${Banana}"><tr height="40">
 	<td>${list.seq}</td>
 	<!-- 로그인 했을때만 글내용을 볼 수 있도록 -->
-	<td><c:if test="${loginID!=null}">
+	<td><%-- <c:if test="${loginID!=null}">
 			<a href="/Web02/bdetail?seq=${list.seq}&id=${list.id}">${list.title}</a>
-		</c:if>
+		</c:if> --%>
+		<a href="/Web02/bdetail.do?seq=${list.seq}">${list.title}</a>
 		<c:if test="${loginID==null}">
 			${list.title}
 		</c:if>
