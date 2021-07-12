@@ -8,9 +8,11 @@
 <title>*** Web_MVC2 LoginForm **</title>
 </head>
 <body>
-<h2>*** Web_MVC2 LoginForm **</h2>
+<h2>*** Web_MVC2 LoginForm_FrontController Test **</h2>
 <br>
-<table><form action="/Web02/login" method="get">
+<!-- <table><form action="/Web02/login" method="get"> -->
+<!-- ** FrontController Test   -->
+<table><form action="/Web02/login.do" method="get">
 	<tr><td bgcolor="PaleTurquoise ">I D</td>
 		<td><input type="text" name="id"></td>
 	</tr>

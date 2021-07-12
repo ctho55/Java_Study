@@ -1,7 +1,5 @@
 package controllerF;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,13 +12,19 @@ public class Ex05_BList implements Ex04_Controller {
 	public String doUser(HttpServletRequest request, HttpServletResponse response) {
 	
 		BoardService service = new BoardService();
-		List<BoardVO> list = service.selectList();
-		if (list == null) {
-			request.setAttribute("message", "~~ 출력할 자료가 1건도 없습니다 ~~");
-			return "/index.jsp" ;
+		BoardVO vo = new BoardVO();
+		
+		vo.setId(request.getParameter("id"));
+		vo.setTitle(request.getParameter("title"));
+		vo.setContent(request.getParameter("content"));
+		
+		if (service.insert(vo)>0) {
+			request.setAttribute("message","~~ insert success");
+			return "/blist.do";
 		}else {
-			request.setAttribute("Banana", list);
-			return "/board/boardList.jsp" ;
+			request.setAttribute("message", "~~insert success");
+			return "/board/binsertForm.jsp";
 		}
+		
 	} //doUser
 } // class

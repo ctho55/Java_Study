@@ -16,7 +16,7 @@ public class DBConnection {
 			// 2) Connection 객체 생성
 			String url ="jdbc:mysql://localhost:3306/mydb?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 			System.out.println("** DB Connection 성공 **");
-			return DriverManager.getConnection(url,"root","mysql");
+			return DriverManager.getConnection(url,"root","ctho55");
 		} catch (Exception e) {
 			System.out.println("** DB Connection 실패 => "+e.toString());
 			return null;
