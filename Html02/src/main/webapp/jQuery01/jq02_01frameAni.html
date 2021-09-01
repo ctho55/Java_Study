@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Frame Animation01 **</title>
+<script src="../myLib/jquery-3.2.1.min.js"></script>
+<script>
+//** Node 인식 방법의 차이
+//=> 1) JS: var img = document.getElementById('img') 
+//          -> Node로 인식 ( Tag 의 속성에 직접 접근 가능 )  
+
+//=> 2) JQ: var img = $('#img') -> jQuery 의 메서드의 적용대상으로 인식
+//   만약, document.getElementById('img') 와 $('#img') 의 return 값이 같다면,
+//   document.getElementById("img").text("<b>하하하</b>") 이 성립되어야 함.
+//   즉, 같은 동작을 위해서는 JS, JQ 의 사용 메서드가 동일해도 된다는 의미 
+//   그러나 그렇지 않고 서로 다른 메서드 또는 프로퍼티로 실행됨
+
+//=> 3) JQ를 사용하면서 JS 처럼 Node로 인식 :  $img = $('#img')
+ 
+//$(document).ready(function() {
+// (document).ready => 생략가능	
+$(function(){
+	var frames=[
+		'0.png','1.png','2.png','3.png',
+		'4.png','5.png','6.png','7.png',
+		'8.png','9.png','10.png','11.png',
+		'12.png','13.png','14.png'];
+	//var img = document.getElementById("img");
+	//var img = $("#img") ;  // XXXXXXXXX
+	//** 비교 JS: img.src =...
+	// 		 JQ: $('#img').attr('src')
+	//$img = $("#img") ; // JQ 를 통해 전달받아, JS로 전달받은것처럼 Node 로 인식됨
+	var img =$("#img")[0]; 
+	var i=0;
+	setInterval(function(){
+		// frames 의 index 값의 범위는 0~14 가 순차적으로 반복
+		// => [] 에 어떤 수식을 적용하면 될까요 
+		img.src=frames[i++ % frames.length] ;
+		// index 의 범위 : 0 ~ (frames.length-1)
+		if (i==frames.length) i=0;
+	},100); // 주기의 단위 1/1000(초)
+}); //ready
+
+</script>
+</head>
+<body>
+<h2>** Frame Animation01 **</h2>
+<h3>=> window 객체의 setInterval 내장함수를 이용</h3>
+<h3>=> setInterval('실행함수 또는 코드',반복주기);
+<hr>
+<img id="img"><br>
+<hr>
+</body>
+</html>

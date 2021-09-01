@@ -9,6 +9,9 @@ public class MemberService {
 	
 	MemberDAO dao = new MemberDAO();
 	
+	public List<MemberVO> selectListOracle() {
+		return dao.selectListOracle();
+	} //selectList()
 	public List<MemberVO> selectList() {
 		return dao.selectList();
 	} //selectList()

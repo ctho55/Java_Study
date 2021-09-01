@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** JQuery Start **</title>
+<!-- 1. 라이브러리 연결 
+1.1) 다운로드 후 설치 : jquery.com   -->
+<script src="../myLib/jquery-3.2.1.min.js"></script>
+
+<!-- 1.2) CDN 호스트 이용 : 인터넷이 연결되어 있어야 함  
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+-->
+<script >
+//** Test1. JQuery Start 
+//1) JQuery 호출
+//-> JS 의 내장함수의 하나 (즉, window 객체에 정의된 메서드)
+//		: eval(), parseInt()..-> window 가 생략됨
+//-> window.jQuery(선택자)
+// 	 -> 선택자에 의해 선택된 노드가 return 됨
+// 	 -> jquery가 인식하고 처리가능한 Type 
+//	 -> (Js) 의 getEkenebtById 가 인식한 Node 와는 다른 Type  
+//-> window.jQuery(선택자).메서드() -> 각 노드별 메서드를 호출 적용 
+//-> 간편화 : window 는 생략, jQuery는 $ 로 기호화 
+//         $(선택자).메서드(매개변수);
+//-> 매개변수 : 1개, 2개, 여러개{....}, 익명함수
+//-> 메서드 : ready 외 각종 이벤트리스너 메서드들(매개변수로 익명함수:이벤트핸들러),
+//         text(), html(), val(), attr(), css()....
+
+//-> ready 이벤트
+//		문서객체 준비 완료됨을 의미하는 기본 이벤트
+//		window.jQuery(document).ready(function{........});
+//		-> $(document).ready(function{........});
+//	 	-> 생략형 : $(function{........});
+//-> JS 와 비교
+//		window.onload=function() {.........};
+
+$(document).ready(function() {
+	//document.write("~~~ Hello JQuery !!! ~~~");
+	//alert("~~~ 안녕 하세요 ~~~ JQuery !!! ~~~");
+	document.getElementById("js1").innerHTML='~~~ 안녕 하세요 ~~~ JQuery !!! ~~~';
+	
+	//2.선택자(Selector) Test
+	//=> css 의 선택자와 동일, 문자형
+	$("#js2").html("~~ 재미있는 JQuery !!!");
+	$("h2").css("color","BLUE");
+	// => 매개변수 갯수 1, 2,....
+	//    1 (속성명) : 속성의 값을 return
+	//	  2	(속성명,속성의값)
+	//    여러개 ({....}) : 여러 속성의 값을 지정
+	alert("** 매개변수 1개 Test : "+$("h2").css("color"));
+	$(".ccc").css("color","Green");
+	$(".ccc").css("background","Yellow");
+	$("#iii").css({
+		color: "white",
+		background: "gray"
+	});
+	
+	//3.Tag의 값(컨텐츠) 인식 & 출력
+	// => html(), text() 
+	// => 매개변수 있는경우(매개변수 내용 출력), 없는경우(현재 컨텐츠를 return) 
+	var text=$("span").text(); // 모든 span에 적용, only text 만 지원 
+	var html=$("span").html(); // 첫 span 에 적용, html Tag 인식&포함
+	alert("text =>"+text);
+	alert("html =>"+html);
+	$(".ccc").text("<b>하하하</b>"); // Tag 를 컨텐츠의 일부로 취급, 문자로 출력됨
+	$(".ddd").html("<b>호호호</b>"); // html Tag 적용됨.
+	
+	// ** JS 와 비교 
+	document.getElementById("js1").innerText="<b>js1: 하하하</b>";
+	document.getElementById("js2").innerHTML="<b>js2: 하하하</b>"; //Tag 적용됨
+	document.getElementById("js3").textContent="<b>js3: 하하하</b>";
+	
+	//5. 다양한 선택자 (Selector)
+	//=> id, class, 상속관계 ...
+//	$("#iii").html("<a href='http://www.naver.com'>Naver</a>");
+//	$(".ccc").html("<a href='#'>Class Test</a>");
+	// 첫번째 child에 해당하는 span : color Red, background Black 로 변경
+  	$("span:nth-child(1)").css({
+			color: "yellow",
+			background: "black"
+	});
+	
+	// 짝수번째 child에 해당하는 span 들 : color Aqua, background pink 로 변경
+	$("span:nth-child(2n)").css({
+			color: "blue",
+			background: "pink"
+	});  
+	
+}); //ready
+
+</script>
+</head>
+<body>
+<pre><h2>
+** JQuery Start **
+1. JQuery 라이브러리연결 과 출력
+2. 선택자(Selector) Test
+	=> css 의 선택자와 동일, 문자형
+3. Tag의 값(컨텐츠) 인식하기
+<span class="ccc"><i>4. Tag 에 Text 출력하기</i></span>
+<span class="ccc"><i>5. 다양한 선택자 (Selector)</i></span>
+<span id="iii"><i>	=> id, class, 상속관계 ...</i></span>
+<span class="ccc"><i>6. 다양한 선택자(Selector) 상속관계 Test</i></span>
+</h2>
+<span id="js1" class="ddd"></span>
+<span id="js2" class="ddd"></span>
+<span id="js3" class="ddd"></span>
+</pre>
+
+</body>
+</html>

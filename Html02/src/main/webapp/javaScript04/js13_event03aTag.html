@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** JavaScript InLine Code 3 종류 **</title>
+</head>
+<body>
+<body>
+<pre><h2>** JavaScript InLine Code 3 종류  **
+=> 1. 인라인 방식
+=> 2. 인라인+스크립트
+=> 3. a 태그의 url 값을 이용 (javascript: 구문 작성)
+   -> javascript: 1) void 를 사용해서 직접 내용을 코딩 할 수 있음.  
+   -> javascript: 2) url 에 메서드를 지정하면 클릭시 실행됨.
+   -> javascript: 3) javascript 구문 작성
+</h2>
+Test 1)   
+=> void 연산자는 undefined 를 반환해서, 웹페이지의 표시 내용이
+   코드의 반환값으로 대체되지(영향받지) 않도록 해줄수 있고,
+=> undefined 가 아니라면 화면 내용을 실행 값으로 대체합니다.
+   
+=> void 0 와 void(0) 동일 : undefined 를 반환  
+</pre>
+<a href="javascript:void(0);">클릭해도 소용없어요~~~</a><br><br>
+<a href="javascript:void(document.body.style.backgroundColor='yellow');">
+   클릭하면 배경색이 Yellow로 ....</a><br><br>
+Test 2)<br>
+<a href="js13_event1.html">js13_event1</a><br>
+<a href="javascript:history.go(-1)">이전으로</a>   
+<a href="javascript:history.go(+1)">다음으로</a>   
+
+Test 3)<br>
+<a href="javascript: abc='Hello'">페이지 내용이 Hello 로 변경됨</a><br>
+<a href="javascript: var e='http://daum.net'; window.open(e);">새창으로 1</a><br>
+<a href="javascript: e='http://daum.net'; window.open(e);">새창으로 2</a>   
+</body>
+
+
+
+</body>
+</html>

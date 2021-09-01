@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Event Basic **</title>
+
+<script type="text/javascript">
+	window.onload=function(){
+	
+	function scriptTest() {
+		alert('~~ 인라인 +스크립트_EventMdoel12 Test');
+	}
+	// Test 3. Traditional
+	// => id 를 이용해서 노드(Tag, 엘리먼트)를 인식하고 이벤트 속성을 이용
+
+	var t = document.getElementById("trad");
+	t.onclick = function() {
+		alert('~~ 인라인 +스크립트_EventMdoel12 Test');
+		t.style.color = "green";
+		this.style.backgroundColor="yellow";
+		this.innerHTML+="☆";
+		//this.innerText+="☆"; 
+		//this.innerContent+="☆"; 
+
+	} // t.onclick
+
+	onload = function() {
+		// ** 기본이벤트 제거 (Remove)   
+		var a = document.getElementById("remove");
+		a.onclick = function() {
+			return false;
+			// 이벤트햍들러가 false를 retrun 하면 이이벤트는 무효화뒴
+			// => a tag 의 기본이벤트 제거 
+		}//a.click 
+
+	} // onload
+	}
+</script>
+
+</head>
+<body>
+	<pre>
+		<h2>
+** Event Basic **
+=> 이벤트속성, 이벤트리스너  : onclick
+   -> on 을 제외한부분을 이벤트이름, 이벤트타입 이라함.
+=>  이벤트핸들러
+   -> 이벤트속성에 대응되는 함수   
+   -> onclick="start()"
+=> 이벤트모델
+   -> dom객체 (Tag)의 이벤트리스너와 이벤트 핸들러를 를 연결하는 방법
+   -> 1)인라인  2)인라인+스크립트  3)고전적(Traditional) 방식
+   
+=> 기본이벤트 제거 (Remove)   
+<a href="http://www.naver.com" id="remove">기본이벤트 제거 Test</a>
+
+** 실습 **
+1)인라인 
+<button onclick="alert('~~ inLine_EventModel1 Test ~~')">inLine_EventModel1</button>
+
+2)인라인+스크립트
+<button onclick="scriptTest()">인라인+스크립트_EventModel2</button>
+
+3)고전적(Traditional) 방식 과 this
+<button id="trad">Traditional_EventModel3</button>
+</h2>
+	</pre>
+
+
+</body>
+</html>

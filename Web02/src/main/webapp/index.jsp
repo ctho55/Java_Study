@@ -32,6 +32,7 @@
 </c:if>
 <br>
 <a href="/Web02/blist">게시판[List]</a>&nbsp;&nbsp;
+<a href="/Web02/mlistOracle">OracleList Test </a>&nbsp;&nbsp;
 <!-- 게시판 추가 
 			=> Table 작성, VO, DAO, Service, 서블릿, Jsp  -->
 <a href="/Web02/blist.do">[List.do]</a>			

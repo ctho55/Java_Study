@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> ** selector : id, tag, tag all **</title>
+<script type="text/javascript">
+	//1. id
+	window.onload=function(){
+	var h=document.getElementById('header');
+	h.style.color="yellow";
+	h.style.backgroundColor="black";
+	
+	//2. tag 
+	var t=document.querySelector("h3");
+	t.style.color="pink";
+	t.style.backgroundColor="green";
+		
+	//3. tag all 
+	// => 모두 선택해서 배열로 리턴
+	var a=document.querySelectorAll("h4");
+	for (var i=0;i<a.length;i++){
+		a[i].style.color = "aqua";
+		a[i].style.backgroundColor= "blue";
+		
+		// 출력되는 컨텐츠를 아래처럼 변경하세요 
+		// ColorChange 성공 i=0
+	 	// i 의 값(숫자)은 이탤릭체로 
+	 	a[i].innerHTML="*** ColorChange 성공 i =<i>"+i+"</i>";
+	 	//	=> 컨테츠에 HTML Tag 적용 
+	 		
+	 	//a[i].innerText="*** ColorChange 성공 i =<i>"+i+"</i>";
+	
+	}
+	
+	
+	
+} //onload
+	
+	
+</script>
+</head>
+<body>
+<pre><h2>
+** selector : id, tag, tag all **
+
+1. id
+=> document.getElementById('')
+<span id="header">getElementById Test</span>
+
+
+
+2. tag 
+=> document.querySelector
+=> 첫번째 tag 1개만 적용 
+
+
+3. tag all 
+=> document.querySelectoAll 
+모두 선택해서 배열로 리턴
+
+</h2></pre>
+
+	<h3>Tag 선택자 Test1 </h3>
+	<h3>Tag 선택자 Test2 </h3>
+	<h3>Tag 선택자 Test3 </h3>
+	
+	<h4>Tag All 선택자 Test1 </h4>
+	<h4>Tag All 선택자 Test2 </h4>
+	<h4>Tag All 선택자 Test3 </h4>
+
+</body>
+</html>

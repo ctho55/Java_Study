@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Event Basic **</title>
+
+<script type="text/javascript">
+var p; 
+// 방법1. 
+/* onload = function () {
+	p= document.getElementById("p");
+	p.addEventListener("mouseover",over);	
+	p.addEventListener("mouseout",out);	
+}//onload
+*/
+
+ // 방법2. body event_init()
+ // => 초기화 함수를 만들고, 적절한 이벤트리스너(body 의 onload)에 등록 
+ // => 이때 등록되는 이벤트핸들러는 CallBack 함수 (매개변수로 전달되는함수)이므로 이름만 등록 
+ function event_init() {
+	p= document.getElementById("p");
+	p.addEventListener("mouseover",over);	
+	p.addEventListener("mouseout",out);	
+}//event_init
+ 
+ 
+
+function over(){
+	p.style.backgroundColor="LightBlue";
+}//over
+
+function out(){
+	p.style.backgroundColor="Aqua";
+}//out
+ 
+ 
+ 
+ 
+ 
+ 
+</script>
+
+</head>
+<body onload="event_init()">
+<h2>** addEventListener()를 이용한 리스너 등록 **</h2>
+<hr>
+<p id="p"> 마우스를 올리면 Color가 변합니다 .</p>
+
+</body>
+</html>
