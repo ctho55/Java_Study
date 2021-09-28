@@ -2,7 +2,7 @@ package j14_Exception;
 
 // ** 오류의 종류
 //=> 컴파일(Compile) 오류 : 에디터 (이클립스) 에서 해결
-//=> 런타임(RunTime) 오류 : 실행시 발생 오류  
+//=> 런타임(RunTime) 오류 : 실행시 발생 오류  -> 실행 일단 멈춤 & 오류 메세지 출력 & 비정상종료
 //=> 논리적(Logical) 오류 : 디버거등 활용
 
 //** Java 
@@ -12,7 +12,7 @@ package j14_Exception;
 //=> 실행 결과 의 오류 : 논리적 (Logical) 오류 -> 검증 및 테스트 (디버거 등 도구 활용)
 
 //** Exception : 계층도 (ppt 12 ~ page)
-//   Object -> Throwable -> Exception -> RuntimeException, IOException
+//   Object -> Throwable -> Exception -> RuntimeException(unChecked Exception), IOException(Checked Exception)
 //                       -> Error
 
 //** Exception 에 적절하게 대응하도록 지원되는 구문

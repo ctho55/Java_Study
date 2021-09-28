@@ -9,7 +9,7 @@
 </head>
 <body> 
 <pre><h2>
-=> test1) WebPage 별로 : WebPage 에서
+=> test1) WebPage 별로 : WebPage의 page디렉티브에서 정의 
 => test2) 응답 상태코드별로 : web.xml
 => test3) Exception 별로 : web.xml 
 => test4) 에러처리의 우선순위
